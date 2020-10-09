@@ -1,0 +1,18 @@
+I copied and pasted my terminal command and result.
+
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 1
+Sorting 100000000 elements took 34.21 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 2
+Sorting 100000000 elements took 18.20 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 3
+Sorting 100000000 elements took 10.04 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 4
+Sorting 100000000 elements took 6.29 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 5
+Sorting 100000000 elements took 4.92 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 6
+Sorting 100000000 elements took 4.19 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 7
+Sorting 100000000 elements took 3.50 seconds.
+[shinjikasai@onyx mergesort]$ ./mytests 100000000 8
+Sorting 100000000 elements took 3.90 seconds.
