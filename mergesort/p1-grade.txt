@@ -1,0 +1,75 @@
+## Grade: 90/100
+
+- [30 pts] Make concurrent (ABET outcome 1) - 30
+  - [10 pts] You got a speedup of at least 2 with 4 or more cores 
+  - [10 pts] mytests.c accepts a number of threads/levels as a command line argument
+  - [10 pts] Correctly creates new threads
+
+- [30 pts] Implementation analysis (speedup.pdf ABET outcome 6) - 30
+  - Score will reflect the quality of the analysis.
+
+- [10 pts] Code quality for **lab.c**
+  - [4 pts] Code is formatted correctly and follows a consistent style
+  - [2 pts] Code is commented when necessary
+  - [4 pts] There is more than just the main function in **mytests.c**
+
+- [20 pts] Compiler warnings **ALL files** - 20: no warnings
+  - Each compiler warning will result in a 3 point deduction.
+  - You are not allowed to suppress warnings
+  - You must build with the flags ```-Wall -Wextra -Wpointer-arith -Wstrict-prototypes -std=gnu89```
+
+- [10 pts] Valgrind reports no memory leaks or read/write errors - 0: memory leaks and errors detected by valgrind.
+  - As reported by **runval.sh**
+  - This is a **PASS/FAIL** score. 1 read/write error or leaking 1
+    byte will result in a zero for this section. There is no partial
+    credit for this section.
+
+*********
+==19083== 
+==19083== HEAP SUMMARY:
+==19083==     in use at exit: 168 bytes in 7 blocks
+==19083==   total heap usage: 143 allocs, 136 frees, 323,100 bytes allocated
+==19083== 
+==19083== 24 bytes in 1 blocks are definitely lost in loss record 1 of 5
+==19083==    at 0x4C2EE3B: malloc (vg_replace_malloc.c:309)
+==19083==    by 0x505A9CF: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x400C0E: main (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/mytests)
+==19083== 
+==19083== 24 bytes in 1 blocks are definitely lost in loss record 2 of 5
+==19083==    at 0x4C2EE3B: malloc (vg_replace_malloc.c:309)
+==19083==    by 0x505A9CF: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x505AA4A: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x400C0E: main (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/mytests)
+==19083== 
+==19083== 24 bytes in 1 blocks are definitely lost in loss record 3 of 5
+==19083==    at 0x4C2EE3B: malloc (vg_replace_malloc.c:309)
+==19083==    by 0x505A9CF: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x505AA4A: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x505AA4A: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x400C0E: main (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/mytests)
+==19083== 
+==19083== 24 bytes in 1 blocks are definitely lost in loss record 4 of 5
+==19083==    at 0x4C2EE3B: malloc (vg_replace_malloc.c:309)
+==19083==    by 0x505A9CF: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x505AA4A: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x505A98B: passArgs (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x4E42593: start_thread (in /usr/lib64/libpthread-2.27.so)
+==19083==    by 0x5356E5E: clone (in /usr/lib64/libc-2.27.so)
+==19083== 
+==19083== 72 bytes in 3 blocks are definitely lost in loss record 5 of 5
+==19083==    at 0x4C2EE3B: malloc (vg_replace_malloc.c:309)
+==19083==    by 0x505A9CF: parallel_mergesort (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x505A98B: passArgs (in /home/jxiao/courses/cs453/f20/shinji/merge-sort/mergesort/libmylab.so)
+==19083==    by 0x4E42593: start_thread (in /usr/lib64/libpthread-2.27.so)
+==19083==    by 0x5356E5E: clone (in /usr/lib64/libc-2.27.so)
+==19083== 
+==19083== LEAK SUMMARY:
+==19083==    definitely lost: 168 bytes in 7 blocks
+==19083==    indirectly lost: 0 bytes in 0 blocks
+==19083==      possibly lost: 0 bytes in 0 blocks
+==19083==    still reachable: 0 bytes in 0 blocks
+==19083==         suppressed: 0 bytes in 0 blocks
+==19083== 
+==19083== For counts of detected and suppressed errors, rerun with: -v
+==19083== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+
